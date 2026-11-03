@@ -1,0 +1,6 @@
+node_modules
+.next
+out
+public/ocr
+next-env.d.ts
+*.tsbuildinfo
