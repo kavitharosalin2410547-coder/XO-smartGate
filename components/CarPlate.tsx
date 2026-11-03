@@ -32,13 +32,14 @@ export default function CarPlate({ plate, makeModel, compact = false, className 
           fontWeight: 700,
           fontSize: compact ? "11.5px" : "13px",
           letterSpacing: "0.8px",
-          color: "#0B2A5E",
+          color: "#10303F",
           background: "#FFFFFF",
-          border: "1.5px solid #0B2A5E",
+          border: "1.5px solid #10303F",
           borderRadius: "4px",
           padding: compact ? "1px 6px" : "2px 8px",
-          boxShadow: "0 1px 2px rgba(11, 42, 94, 0.08)",
+          boxShadow: "0 1px 2px rgba(16, 48, 63, 0.08)",
           textTransform: "uppercase",
+          whiteSpace: "nowrap",
         }}
       >
         <span style={{ fontSize: "9px", opacity: 0.6, fontWeight: 800 }}>IND</span>

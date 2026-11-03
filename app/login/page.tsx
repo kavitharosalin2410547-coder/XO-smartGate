@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { currentUsername, hasAnyUser, login, register } from "@/lib/auth";
-import { IconCamera, IconCheck, IconDrop, IconShield } from "@/components/icons";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -13,6 +12,7 @@ export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -48,80 +48,80 @@ export default function LoginPage() {
   const setup = mode === "setup";
 
   return (
-    <main className="auth">
-      <section className="auth-form-wrap">
-        <form className="auth-form" onSubmit={submit}>
-          <div className="brand">
-            <span className="brand-mark">
-              <IconDrop size={20} />
-            </span>
-            <span className="brand-name">Garage Desk</span>
-          </div>
+    <main className="lg-page">
+      <div className="lg-wrap">
+        <div className="lg-brand">
+          <span className="lg-mark">XO</span>
+          <span className="lg-brand-text">
+            <strong>XO SmartGate</strong>
+            <small>Vehicle tracking &amp; billing</small>
+          </span>
+        </div>
 
-          <h1 className="auth-title">{setup ? "Set up your car wash" : "Welcome back"}</h1>
-          <p className="muted">
+        <form className="lg-card" onSubmit={submit}>
+          <h1 className="lg-title">{setup ? "Create your account" : "Sign in"}</h1>
+          <p className="lg-sub">
             {setup
-              ? "First time on this device. Create the admin account. It is stored only here and works with no internet."
-              : "Sign in to manage today's washes. Works offline."}
+              ? "First time on this device. This admin account is stored only here."
+              : "Enter your username and password to continue."}
           </p>
 
           {setup && (
             <>
-              <div className="field">
+              <div className="lg-field">
                 <label htmlFor="biz">Business name</label>
-                <input id="biz" className="input" value={business} onChange={(e) => setBusiness(e.target.value)} placeholder="Blue Wave Car Wash" required />
+                <input id="biz" className="lg-input" value={business} onChange={(e) => setBusiness(e.target.value)} placeholder="Blue Wave Car Wash" required />
               </div>
-              <div className="field">
+              <div className="lg-field">
                 <label htmlFor="name">Your name</label>
-                <input id="name" className="input" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" required />
+                <input id="name" className="lg-input" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" required />
               </div>
             </>
           )}
 
-          <div className="field">
+          <div className="lg-field">
             <label htmlFor="user">Username</label>
-            <input id="user" className="input" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" autoCapitalize="none" required />
+            <input id="user" className="lg-input" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" autoCapitalize="none" autoFocus required />
           </div>
-          <div className="field">
+
+          <div className="lg-field">
             <label htmlFor="pass">Password</label>
-            <input id="pass" className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete={setup ? "new-password" : "current-password"} required />
+            <div className="lg-pass">
+              <input
+                id="pass"
+                className="lg-input"
+                type={show ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete={setup ? "new-password" : "current-password"}
+                required
+              />
+              <button type="button" className="lg-eye" onClick={() => setShow((s) => !s)} aria-label={show ? "Hide password" : "Show password"}>
+                {show ? "Hide" : "Show"}
+              </button>
+            </div>
           </div>
+
           {setup && (
-            <div className="field">
+            <div className="lg-field">
               <label htmlFor="confirm">Confirm password</label>
-              <input id="confirm" className="input" type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" required />
+              <input id="confirm" className="lg-input" type={show ? "text" : "password"} value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" required />
             </div>
           )}
 
           {error && (
-            <p className="error" role="alert">
+            <p className="lg-error" role="alert">
               {error}
             </p>
           )}
 
-          <button className="btn primary block lg" type="submit" disabled={busy}>
-            {busy ? "Please wait…" : setup ? "Create account" : "Log in"}
+          <button className="lg-btn" type="submit" disabled={busy}>
+            {busy ? "Please wait…" : setup ? "Create account" : "Sign in"}
           </button>
         </form>
-      </section>
 
-      <aside className="auth-aside" aria-hidden="true">
-        <div className="aside-inner">
-          <h2>Every wash, tracked.</h2>
-          <p>From the first scan of a number plate to the final payment.</p>
-          <ul>
-            <li>
-              <IconCheck size={18} /> Works fully offline
-            </li>
-            <li>
-              <IconCamera size={18} /> Scan number plates with the camera
-            </li>
-            <li>
-              <IconShield size={18} /> Roles and permissions for your team
-            </li>
-          </ul>
-        </div>
-      </aside>
+        <p className="lg-foot">Works offline · Your data stays on this device</p>
+      </div>
     </main>
   );
 }

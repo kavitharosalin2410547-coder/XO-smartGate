@@ -82,3 +82,9 @@ You can also install it from Chrome's address bar and open it like a normal app.
 ```bash
 npm test      # unit tests for plate reading and revenue calculations
 ```
+
+## Accounts (W5 Reconciliation · W6 Discounts · W12 Reports)
+
+Switch to the Accounts role (bottom of the sidebar) to see Reconciliation, Discounts and Reports.
+The money logic lives in `lib/accounts.ts` (tests in `tests/accounts.test.ts`); the screens are in `components/accounts/`.
+Excel and PDF downloads are built in the browser (`lib/export.ts`, PDF uses `jspdf`; run `npm install` after pulling).

@@ -19,6 +19,15 @@ export default function PwaRegister() {
     window.addEventListener("appinstalled", onInstalled);
 
     if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+      // When a new version takes over, reload once so the open page is not left on the old one.
+      const had = !!navigator.serviceWorker.controller;
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (had && !reloaded) {
+          reloaded = true;
+          window.location.reload();
+        }
+      });
       navigator.serviceWorker.register("/sw.js").catch((err) => console.error("SW registration failed", err));
     }
 

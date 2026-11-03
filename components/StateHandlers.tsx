@@ -18,7 +18,7 @@ export function LoadingPlaceholderRows({ rows = 4 }: { rows?: number }) {
           key={i}
           style={{
             height: "44px",
-            background: "linear-gradient(90deg, #EAEFF5 25%, #F5F9FE 50%, #EAEFF5 75%)",
+            background: "linear-gradient(90deg, #E6F0F4 25%, #F3F8FA 50%, #E6F0F4 75%)",
             backgroundSize: "200% 100%",
             animation: "sg-skeleton-shimmer 1.5s infinite",
             borderRadius: "8px",
@@ -52,7 +52,7 @@ export function EmptyState({ message, actionText, onAction }: { message: string;
             onClick={onAction}
             style={{
               marginLeft: "10px",
-              color: "#1A86DD",
+              color: "#246C8A",
               fontWeight: 600,
               background: "none",
               border: "none",
@@ -85,7 +85,7 @@ export function ErrorRetryState({ onRetry, message = "Couldn't load. Try again" 
       <button
         onClick={onRetry}
         style={{
-          background: "#EF7D00",
+          background: "linear-gradient(135deg, #1A4D64 0%, #0B1D29 100%)",
           color: "#FFFFFF",
           border: "none",
           borderRadius: "8px",
@@ -93,7 +93,7 @@ export function ErrorRetryState({ onRetry, message = "Couldn't load. Try again" 
           fontSize: "13px",
           fontWeight: 600,
           cursor: "pointer",
-          boxShadow: "0 2px 4px rgba(239, 125, 0, 0.25)",
+          boxShadow: "0 2px 4px rgba(16, 48, 63, 0.25)",
         }}
       >
         Retry
@@ -110,14 +110,14 @@ export function NoPermissionState({ role, required = "Owner" }: { role?: string;
         textAlign: "center",
         backgroundColor: "#FFFFFF",
         borderRadius: "14px",
-        border: "1px solid #E2E8F0",
+        border: "1px solid #DDE8EE",
         maxWidth: "600px",
         margin: "40px auto",
-        boxShadow: "0 4px 12px rgba(11, 42, 94, 0.05)",
+        boxShadow: "0 4px 12px rgba(16, 48, 63, 0.05)",
       }}
     >
       <div style={{ fontSize: "32px", marginBottom: "12px" }}>🔒</div>
-      <h2 style={{ fontSize: "18px", color: "#0B2A5E", fontWeight: 700, margin: "0 0 8px" }}>You don&apos;t have access to this</h2>
+      <h2 style={{ fontSize: "18px", color: "#10303F", fontWeight: 700, margin: "0 0 8px" }}>You don&apos;t have access to this</h2>
       <p style={{ fontSize: "14px", color: "#64748B", margin: 0 }}>
         This screen is restricted to <strong>{required}</strong>. Your current role is <strong>{role || "Unknown"}</strong>.
       </p>

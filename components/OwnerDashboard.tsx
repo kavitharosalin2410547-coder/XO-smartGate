@@ -84,7 +84,7 @@ export default function OwnerDashboard() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <h1 style={{ fontSize: "22px", fontWeight: 800, color: "#0B2A5E", margin: 0 }}>
+            <h1 style={{ fontSize: "22px", fontWeight: 700, color: "#10303F", margin: 0 }}>
               {range === "today" ? "Today" : range === "week" ? "This Week" : "This Month"} · All centres
             </h1>
             <span
@@ -97,7 +97,7 @@ export default function OwnerDashboard() {
                 backgroundColor: "#FFFFFF",
                 padding: "3px 10px",
                 borderRadius: "14px",
-                border: "1px solid #E2E8F0",
+                border: "1px solid #DDE8EE",
               }}
             >
               <span
@@ -121,7 +121,7 @@ export default function OwnerDashboard() {
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <div
             style={{
-              backgroundColor: "#E2E8F0",
+              backgroundColor: "#DDE8EE",
               padding: "3px",
               borderRadius: "10px",
               display: "inline-flex",
@@ -144,7 +144,7 @@ export default function OwnerDashboard() {
                     fontSize: "13px",
                     fontWeight: active ? 700 : 500,
                     color: active ? "#FFFFFF" : "#475569",
-                    backgroundColor: active ? "#1A86DD" : "transparent",
+                    backgroundColor: active ? "#246C8A" : "transparent",
                     cursor: "pointer",
                     textTransform: "capitalize",
                     transition: "all 0.15s ease",
@@ -166,7 +166,7 @@ export default function OwnerDashboard() {
               padding: "7px 12px",
               fontSize: "12.5px",
               fontWeight: 600,
-              color: "#0B2A5E",
+              color: "#10303F",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
@@ -207,8 +207,8 @@ export default function OwnerDashboard() {
                     backgroundColor: "#FFFFFF",
                     borderRadius: "14px",
                     padding: "18px 20px",
-                    boxShadow: "0 2px 8px rgba(11, 42, 94, 0.05)",
-                    border: "1px solid #E2E8F0",
+                    boxShadow: "0 2px 8px rgba(16, 48, 63, 0.05)",
+                    border: "1px solid #DDE8EE",
                     cursor: "pointer",
                     transition: "transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease",
                     display: "flex",
@@ -217,24 +217,24 @@ export default function OwnerDashboard() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 8px 18px rgba(11, 42, 94, 0.09)";
-                    e.currentTarget.style.borderColor = "#1A86DD";
+                    e.currentTarget.style.boxShadow = "0 8px 18px rgba(16, 48, 63, 0.09)";
+                    e.currentTarget.style.borderColor = "#246C8A";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(11, 42, 94, 0.05)";
-                    e.currentTarget.style.borderColor = "#E2E8F0";
+                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(16, 48, 63, 0.05)";
+                    e.currentTarget.style.borderColor = "#DDE8EE";
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "14px", fontWeight: 700, color: "#0B2A5E" }}>{c.centreName}</span>
+                    <span style={{ fontSize: "14px", fontWeight: 700, color: "#10303F" }}>{c.centreName}</span>
                     <span
                       style={{
                         fontSize: "10.5px",
                         fontWeight: 600,
                         padding: "2px 6px",
                         borderRadius: "4px",
-                        backgroundColor: c.type === "service" ? "#EFF6FF" : "#ECFDF5",
+                        backgroundColor: c.type === "service" ? "#E6F0F4" : "#ECFDF5",
                         color: c.type === "service" ? "#1D4ED8" : "#047857",
                       }}
                     >
@@ -243,7 +243,7 @@ export default function OwnerDashboard() {
                   </div>
 
                   {/* Vehicles In */}
-                  <div style={{ fontSize: "28px", fontWeight: 800, color: "#1A86DD", lineHeight: 1.1, marginBottom: "8px" }}>
+                  <div style={{ fontSize: "28px", fontWeight: 700, color: "#246C8A", lineHeight: 1.1, marginBottom: "8px" }}>
                     {c.vehiclesIn} <span style={{ fontSize: "16px", fontWeight: 600 }}>in</span>
                   </div>
 
@@ -260,7 +260,7 @@ export default function OwnerDashboard() {
                       marginTop: "6px",
                     }}
                   >
-                    <span style={{ fontWeight: 700, color: "#0B2A5E" }}>{formatIndianCurrency(c.collection)}</span>
+                    <span style={{ fontWeight: 700, color: "#10303F" }}>{formatIndianCurrency(c.collection)}</span>
                     <span>•</span>
                     <span style={{ color: c.pendingUnbilled > 0 ? "#D97706" : "#64748B", fontWeight: c.pendingUnbilled > 0 ? 600 : 400 }}>
                       {c.pendingUnbilled} pending
@@ -286,26 +286,26 @@ export default function OwnerDashboard() {
                 backgroundColor: "#FFFFFF",
                 borderRadius: "14px",
                 padding: "22px 24px",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 2px 8px rgba(11, 42, 94, 0.05)",
+                border: "1px solid #DDE8EE",
+                boxShadow: "0 2px 8px rgba(16, 48, 63, 0.05)",
                 display: "flex",
                 flexDirection: "column",
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                 <div>
-                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#0B2A5E", margin: 0 }}>
+                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#10303F", margin: 0 }}>
                     Collections by centre · last 7 days
                   </h3>
                   <span style={{ fontSize: "12px", color: "#64748B" }}>Comparative daily revenue across all active units</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "11.5px", color: "#475569" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                    <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#0B2A5E" }} />
+                    <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#10303F" }} />
                     <span>Service Centres</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                    <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#EF7D00" }} />
+                    <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#3A88A6" }} />
                     <span>Wash Branches</span>
                   </div>
                 </div>
@@ -320,7 +320,7 @@ export default function OwnerDashboard() {
                   gap: "18px",
                   minHeight: "220px",
                   paddingBottom: "12px",
-                  borderBottom: "1px solid #E2E8F0",
+                  borderBottom: "1px solid #DDE8EE",
                 }}
               >
                 {chartData.map((day) => {
@@ -351,7 +351,7 @@ export default function OwnerDashboard() {
                           flexDirection: "column",
                           borderRadius: "6px 6px 0 0",
                           overflow: "hidden",
-                          boxShadow: "0 2px 4px rgba(11, 42, 94, 0.08)",
+                          boxShadow: "0 2px 4px rgba(16, 48, 63, 0.08)",
                           cursor: "pointer",
                           transition: "opacity 0.15s ease",
                         }}
@@ -363,14 +363,14 @@ export default function OwnerDashboard() {
                         <div
                           style={{
                             height: `${Math.round((serviceTotal / day.total) * 100)}%`,
-                            backgroundColor: "#0B2A5E",
+                            backgroundColor: "#10303F",
                           }}
                         />
                         {/* Wash portion (Orange) */}
                         <div
                           style={{
                             height: `${Math.round((washTotal / day.total) * 100)}%`,
-                            backgroundColor: "#EF7D00",
+                            backgroundColor: "#3A88A6",
                           }}
                         />
                       </div>
@@ -380,7 +380,7 @@ export default function OwnerDashboard() {
                         style={{
                           fontSize: "12px",
                           fontWeight: day.dayLabel === "Today" ? 700 : 500,
-                          color: day.dayLabel === "Today" ? "#1A86DD" : "#64748B",
+                          color: day.dayLabel === "Today" ? "#246C8A" : "#64748B",
                         }}
                       >
                         {day.dayLabel}
@@ -402,11 +402,11 @@ export default function OwnerDashboard() {
               >
                 <div style={{ color: "#64748B" }}>
                   7-Day Total:{" "}
-                  <strong style={{ color: "#0B2A5E" }}>
+                  <strong style={{ color: "#10303F" }}>
                     {formatIndianCurrency(chartData.reduce((acc, d) => acc + d.total, 0))}
                   </strong>
                 </div>
-                <div style={{ color: "#1A86DD", fontWeight: 600 }}>Click any centre card above for live bay breakdown →</div>
+                <div style={{ color: "#246C8A", fontWeight: 600 }}>Click any centre card above for live bay breakdown →</div>
               </div>
             </div>
 
@@ -416,18 +416,18 @@ export default function OwnerDashboard() {
                 backgroundColor: "#FFFFFF",
                 borderRadius: "14px",
                 padding: "22px 20px",
-                border: "1px solid #E2E8F0",
-                boxShadow: "0 2px 8px rgba(11, 42, 94, 0.05)",
+                border: "1px solid #DDE8EE",
+                boxShadow: "0 2px 8px rgba(16, 48, 63, 0.05)",
                 display: "flex",
                 flexDirection: "column",
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#0B2A5E", margin: 0 }}>Alerts</h3>
+                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#10303F", margin: 0 }}>Alerts</h3>
                   <span
                     style={{
-                      backgroundColor: "#EF7D00",
+                      backgroundColor: "#3A88A6",
                       color: "#FFFFFF",
                       fontSize: "11px",
                       fontWeight: 700,
@@ -455,7 +455,7 @@ export default function OwnerDashboard() {
               ) : (
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
                   {alerts.map((al) => {
-                    let badgeBg = "#EFF6FF";
+                    let badgeBg = "#E6F0F4";
                     let badgeColor = "#1D4ED8";
                     if (al.type === "Blocked") {
                       badgeBg = "#FEF2F2";
@@ -503,7 +503,7 @@ export default function OwnerDashboard() {
                             >
                               {al.type}
                             </span>
-                            <span style={{ fontSize: "13px", fontWeight: 600, color: "#0B2A5E" }}>{al.title}</span>
+                            <span style={{ fontSize: "13px", fontWeight: 600, color: "#10303F" }}>{al.title}</span>
                           </div>
                           <span style={{ fontSize: "11.5px", color: "#64748B" }}>
                             {al.centreName} • {al.detail}

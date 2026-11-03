@@ -208,7 +208,7 @@ export const SEED_ALERTS: SmartGateAlert[] = [
     centreId: "wash-1",
     centreName: "Wash 1",
     timeStr: "11:30",
-    targetUrl: "/audit?action=Cash+short",
+    targetUrl: "/reconciliation?centre=wash-1",
     resolved: false,
   },
   {
